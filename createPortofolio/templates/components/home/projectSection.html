@@ -1,0 +1,115 @@
+{% load static %}
+
+<!-- Projects Section -->
+<section class="py-16 bg-white" id="projects">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="text-center mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+        Featured <span class="text-blue-600">Projects</span>
+      </h2>
+      <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        Selection of my best work combining design and development
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <!-- Project 1 - Flutter Mobile App -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+        <div class="h-48 overflow-hidden">
+          <img src="{% static 'img/project-thumbnail/Pizza Delivery.png' %}" 
+               alt="Pizza Delivery" 
+               class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">Flutter</span>
+            <span class="px-2 py-1 bg-purple-100 text-purple-800 text-xs font-medium rounded-md">Dart</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Pizza Delivery</h3>
+          <p class="text-gray-600 mb-4">A complete pizza delivery solution with order tracking and payment integration</p>
+          <div class="flex justify-between items-center">
+            <a href="#" class="text-sm font-medium text-blue-600 hover:text-blue-700 flex items-center">
+              View Case Study
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 2 - React Dashboard -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+        <div class="h-48 overflow-hidden">
+          <img src="{% static 'img/project-thumbnail/Japeko.png' %}" 
+               alt="JApeko" 
+               class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-2 py-1 bg-blue-100 text-blue-800 text-xs font-medium rounded-md">Figma</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Japeko - Rental Laptop</h3>
+          <p class="text-gray-600 mb-4">Pinjam laptop dengan pilihan lengkap dan harga terjangkau</p>
+          <div class="flex justify-between items-center">
+            <a href="#" class="text-sm font-medium text-blue-600 hover:text-blue-700 flex items-center">
+              View Details
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 3 - Next.js Website -->
+      <div class="group relative overflow-hidden rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100">
+        <div class="h-48 overflow-hidden">
+          <img src="{% static 'img/project-thumbnail/Product.png' %}" 
+               alt="E-commerce Platform" 
+               class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+        </div>
+        <div class="p-6">
+          <div class="flex items-center gap-2 mb-3">
+            <span class="px-2 py-1 bg-gray-100 text-gray-800 text-xs font-medium rounded-md">Next.js</span>
+            <span class="px-2 py-1 bg-yellow-100 text-yellow-800 text-xs font-medium rounded-md">JavaScript</span>
+          </div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">E-commerce Platform</h3>
+          <p class="text-gray-600 mb-4">High-performance online store with payment integration</p>
+          <div class="flex justify-between items-center">
+            <a href="#" class="text-sm font-medium text-blue-600 hover:text-blue-700 flex items-center">
+              Live Demo
+              <svg class="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+              </svg>
+            </a>
+            <a href="#" class="text-gray-400 hover:text-gray-500">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="mt-12 text-center">
+      <a href="/project" class="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50">
+        View All Projects
+        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

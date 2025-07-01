@@ -1,0 +1,75 @@
+{% load static %}
+
+<!-- templates/partials/hero.html -->
+<section class="relative bg-white py-16 md:py-24">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex flex-col md:flex-row items-center gap-12">
+            <!-- Text content -->
+            <div class="md:w-1/2 text-center md:text-left">
+                <h1 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+                    Hi, I'm <span class="text-blue-600">Abimanyu</span>
+                </h1>
+                
+                <div class="mb-6">
+                    <span class="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-md text-sm font-medium mb-3">
+                        Fullstack Developer
+                    </span>
+                    <span class="inline-block px-3 py-1 bg-purple-100 text-purple-800 rounded-md text-sm font-medium ml-2">
+                        UI/UX Designer
+                    </span>
+                </div>
+                
+                <p class="text-lg text-gray-600 mb-8 max-w-lg">
+                    I build beautiful, functional digital experiences with clean code and thoughtful design. 
+                    Specializing in modern web technologies and user-centered interfaces.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+                    <a href="#contact"
+                        class="px-6 py-3 bg-gray-800 hover:bg-gray-700 text-white font-medium rounded-lg transition shadow-sm transition transform hover:-translate-y-1">
+                        Hire Me
+                    </a>
+                    <a href="#projects"
+                        class="px-6 py-3 border border-gray-200 hover:bg-gray-50 text-gray-700 font-medium rounded-lg transition hover:border-gray-400">
+                        View Projects
+                    </a>
+                </div>
+                
+                <!-- Tech stack indicators -->
+                <div class="mt-10 flex flex-wrap justify-center md:justify-start gap-3">
+                    <div class="flex items-center text-sm text-gray-500 bg-green-100 rounded-md px-3 py-1">
+                        <span class="w-2 h-2 bg-green-400 rounded-full mr-2"></span>
+                        Available for freelance
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 bg-blue-100 rounded-md px-3 py-1">
+                        <span class="w-2 h-2 bg-blue-400 rounded-full mr-2"></span>
+                        3+ years experience
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Profile image with subtle decoration -->
+            <div class="md:w-1/2 relative">
+                <div class="relative rounded-2xl overflow-hidden shadow-md">
+                    <img src="{% static 'img/bim (1).png' %}" 
+                         alt="Abimanyu - Fullstack Developer & Designer" 
+                         class="w-full h-auto object-cover">
+                </div>
+                <!-- Floating badge -->
+                <div class="absolute -bottom-4 -right-4 bg-white px-4 py-2 rounded-lg shadow-md border border-gray-100">
+                    <div class="flex items-center">
+                        <div class="bg-yellow-100 p-1 rounded-full mr-2">
+                            <svg class="w-5 h-5 text-yellow-500" fill="currentColor" viewBox="0 0 20 20">
+                                <path fill-rule="evenodd" d="M12.586 4.586a2 2 0 112.828 2.828l-3 3a2 2 0 01-2.828 0 1 1 0 00-1.414 1.414 4 4 0 005.656 0l3-3a4 4 0 00-5.656-5.656l-1.5 1.5a1 1 0 101.414 1.414l1.5-1.5zm-5 5a2 2 0 012.828 0 1 1 0 101.414-1.414 4 4 0 00-5.656 0l-3 3a4 4 0 105.656 5.656l1.5-1.5a1 1 0 10-1.414-1.414l-1.5 1.5a2 2 0 11-2.828-2.828l3-3z" clip-rule="evenodd"></path>
+                            </svg>
+                        </div>
+                        <div>
+                            <p class="text-xs text-gray-500">Currently working on</p>
+                            <p class="font-medium text-gray-900">Florera</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
