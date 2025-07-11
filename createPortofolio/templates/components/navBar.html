@@ -1,4 +1,4 @@
-<!-- templates/partials/navbar.html -->
+
 <nav class="bg-white shadow-sm fixed w-full z-20">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex items-center justify-between">
@@ -14,17 +14,17 @@
                       {% if request.path == '/' %}border-blue-500{% else %}border-transparent hover:border-gray-300 hover:text-gray-700{% endif %}">
                     Home
                 </a>
-                <a href="/blog"
+                <a href="/blog/"
                     class="border-gray-800 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium 
                       {% if '/blog/' in request.path %}border-blue-500{% else %}border-transparent hover:border-gray-300 hover:text-gray-700{% endif %}">
                     Blog
                 </a>
-                <a href="/project"
+                <a href="/project/"
                     class="border-gray-800 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium 
                       {% if '/project/' in request.path %}border-blue-500{% else %}border-transparent hover:border-gray-300 hover:text-gray-700{% endif %}">
                     Project
                 </a>
-                <a href="/contact"
+                <a href="/contact/"
                     class="border-gray-800 text-gray-900 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium 
                       {% if '/contact/' in request.path %}border-blue-500{% else %}border-transparent hover:border-gray-300 hover:text-gray-700{% endif %}">
                     Contact

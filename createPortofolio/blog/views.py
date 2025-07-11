@@ -1,15 +1,11 @@
 from django.shortcuts import render
+from .models import BlogSection
 
 # Create your views here.
 
 def blog(request):
     context = {
         'title': 'Blog',
-        # 'navbar': [
-        #     {'name': 'Home', 'url': '/'},
-        #     {'name': 'Blog', 'url': '/blog'},
-        #     {'name': 'About', 'url': '/about'},
-        #     {'name': 'Contact', 'url': '/contact'},
-        # ],
+        'blog_section': BlogSection.objects.all(),
     }
     return render(request, 'blog.html', context)

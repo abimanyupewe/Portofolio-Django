@@ -1,9 +1,8 @@
-{% block content %}
-{% load static %}
+{% block content %} {% load static %}
 
 <!-- Blog Section -->
 <section class="py-16 bg-gray-50" id="blog">
-  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8" data-aos="fade-up" data-aos-duration="1000">
     <div class="text-center mb-16">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
         Latest <span class="text-blue-600">Articles</span>
@@ -14,102 +13,87 @@
     </div>
 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {% for blog in blog_section %}
       <!-- Blog Card 1 -->
-      <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
-        <a href="#">
+      <article
+        class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100"
+      >
+        <a href="{{blog.slug}}">
           <div class="h-48 overflow-hidden">
-            <img src="{% static 'img/blog-thumbnail/flutter-tips.png' %}" 
-                 alt="Flutter Performance Tips" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
+            {% if blog.image %}
+            <img
+              src="{{ blog.image.url }}"
+              alt="{{ blog.title }}"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+            {% else %}
+            <!-- Placeholder jika tidak ada gambar -->
+            <img
+              src="{% static 'img/blog-thumbnail/default.png' %}"
+              alt="Default image"
+              class="w-full h-full object-cover group-hover:scale-105 transition duration-500"
+            />
+            {% endif %}
           </div>
           <div class="p-6">
             <div class="flex items-center gap-2 mb-3">
-              <span class="text-xs font-medium text-blue-600">MOBILE DEVELOPMENT</span>
+              <span class="text-xs font-medium text-blue-600"
+                >{{ blog.category.name|upper }}</span
+              >
               <span class="text-gray-400">•</span>
-              <span class="text-xs text-gray-500">May 15, 2023</span>
+              <span class="text-xs text-gray-500">
+                {{ blog.created_at|date:"H:i" }}
+                <!-- Menampilkan jam:menit -->
+              </span>
+              <span class="text-xs text-gray-500">
+                {{ blog.created_at|date:"F" }}
+                <!-- Menampilkan nama bulan lengkap -->
+              </span>
             </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
-              Optimizing Flutter App Performance
+            <h3
+              class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition line-clamp-3"
+            >
+              {{ blog.title }}
             </h3>
-            <p class="text-gray-600 mb-4">
-              Essential techniques to make your Flutter applications run smoother and faster on all devices.
+            <p class="text-gray-600 mb-4 line-clamp-3">
+              {{ blog.content|truncatewords:20 }}
             </p>
             <div class="flex items-center">
-              <img src="{% static 'img/denis.jpg' %}" 
-                   alt="Abimanyu Priyo Widagdo" 
-                   class="w-8 h-8 rounded-full mr-3">
-              <span class="text-sm font-medium text-gray-500 group-hover:text-gray-900">Abimanyu Priyo Widagdo</span>
+              <!-- Jika kamu punya author photo, bisa diganti -->
+              <img
+                src="{% static 'img/denis.jpg' %}"
+                alt="{{ blog.author }}"
+                class="w-8 h-8 rounded-full mr-3"
+              />
+              <span
+                class="text-sm font-medium text-gray-500 group-hover:text-gray-900"
+                >{{ blog.author }}</span
+              >
             </div>
           </div>
         </a>
       </article>
-
-      <!-- Blog Card 2 -->
-      <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
-        <a href="#">
-          <div class="h-48 overflow-hidden">
-            <img src="{% static 'img/blog-thumbnail/react-vs-nextjs.png' %}" 
-                 alt="React vs Next.js" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-xs font-medium text-purple-600">WEB DEVELOPMENT</span>
-              <span class="text-gray-400">•</span>
-              <span class="text-xs text-gray-500">April 28, 2023</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
-              React vs Next.js: When to Use Each
-            </h3>
-            <p class="text-gray-600 mb-4">
-              A comprehensive comparison to help you choose the right framework for your next project.
-            </p>
-            <div class="flex items-center">
-              <img src="{% static 'img/denis.jpg' %}" 
-                   alt="Abimanyu Priyo Widagdo" 
-                   class="w-8 h-8 rounded-full mr-3">
-              <span class="text-sm font-medium text-gray-500 group-hover:text-gray-900">Abimanyu Priyo Widagdo</span>
-            </div>
-          </div>
-        </a>
-      </article>
-
-      <!-- Blog Card 3 -->
-      <article class="group bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300 border border-gray-100">
-        <a href="#">
-          <div class="h-48 overflow-hidden">
-            <img src="{% static 'img/blog-thumbnail/ui-ux-trends.png' %}" 
-                 alt="UI/UX Trends" 
-                 class="w-full h-full object-cover group-hover:scale-105 transition duration-500">
-          </div>
-          <div class="p-6">
-            <div class="flex items-center gap-2 mb-3">
-              <span class="text-xs font-medium text-green-600">UI/UX DESIGN</span>
-              <span class="text-gray-400">•</span>
-              <span class="text-xs text-gray-500">March 10, 2023</span>
-            </div>
-            <h3 class="text-xl font-bold text-gray-900 mb-3 group-hover:text-blue-600 transition">
-              2023 UI/UX Design Trends to Watch
-            </h3>
-            <p class="text-gray-600 mb-4">
-              The most impactful design trends this year that will shape user experiences across digital products.
-            </p>
-            <div class="flex items-center">
-              <img src="{% static 'img/denis.jpg' %}" 
-                   alt="Abimanyu Priyo Widagdo" 
-                   class="w-8 h-8 rounded-full mr-3">
-              <span class="text-sm font-medium text-gray-500 group-hover:text-gray-900">Abimanyu Priyo Widagdo</span>
-            </div>
-          </div>
-        </a>
-      </article>
+      {% endfor %}
     </div>
 
     <div class="mt-12 text-center">
-      <a href="\blog" class="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50">
+      <a
+        href="\blog"
+        class="inline-flex items-center px-6 py-3 border border-gray-300 shadow-sm text-base font-medium rounded-lg text-gray-700 bg-white hover:bg-gray-50"
+      >
         View All Articles
-        <svg class="w-4 h-4 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        <svg
+          class="w-4 h-4 ml-2"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M19 9l-7 7-7-7"
+          ></path>
         </svg>
       </a>
     </div>
